@@ -34,5 +34,6 @@ class ThirdLargestElement {
          }
      }
      System.out.println("Third Largest Element is :"+t);
+     sc.close();
  }
 }
