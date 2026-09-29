@@ -11,7 +11,7 @@ public class DuplicateElement {
 		
 		Map<Integer, Integer> m = new HashMap<Integer, Integer>();
 
-		for (int num : arr) {
+		for (int num : arr){
 		    m.put(num, m.getOrDefault(num, 0) + 1);
 		}
 
