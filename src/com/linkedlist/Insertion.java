@@ -10,8 +10,50 @@ public class Insertion {
 		newNode.next = head;
 		head = newNode;
 		
+		//return head;
+		
+		ListNode newN = new ListNode(value,head);
+		return newN;
+	}
+	
+	public static ListNode insertAtEnd(ListNode head,int value)
+	{
+		ListNode newNode = new ListNode(value);
+		ListNode temp = head;
+		while(temp.next!=null)
+		{
+			temp=temp.next;
+		}
+		temp.next = newNode;
 		return head;
 	}
+	
+	public static ListNode insertAtK(ListNode head,int value,int k)
+	{
+		int count=0;
+		ListNode temp = head;
+		
+		while(temp!=null)
+		{
+			count++;
+			if(count==k-1)
+			{
+				ListNode newNode = new ListNode(value);
+				newNode.next = temp.next;
+				temp.next = newNode;
+				
+				
+//				temp.next = newNode; //losing the connection to the next node
+//				newNode.next = temp.next.next;
+			}
+			temp = temp.next;
+		}
+		
+		return head;
+	}
+	
+	
+	
 
 	public static void traverse(ListNode head)
 	{
@@ -40,10 +82,16 @@ public class Insertion {
 		
 		ListNode head;
 		head = insertAtFront(l1,60);
-		
-		System.out.println("\nAfter insertion at beginning: ");
 		traverse(head);
 			
+		head = insertAtEnd(l1,100);
+		System.out.println("\n\nAfter inserting at ending: ");
+		traverse(head);
+		
+		head = insertAtK(l1,700,3);
+		System.out.println("\n\nAfter inserting at K: ");
+		traverse(head);
+		
 
 	}
 

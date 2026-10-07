@@ -10,8 +10,14 @@ public class ListNode {
 		this.val=x;
 	}
 	
+	public ListNode(int val,ListNode next)
+	{
+		this.val = val;
+		this.next=next;
+	}
+	
 	public static void main(String[] args) {
-		
+	
 		ListNode l1 = new ListNode(56);
 		ListNode l2 = new ListNode(30);
 		ListNode l3 = new ListNode(70);
